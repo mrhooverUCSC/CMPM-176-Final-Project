@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - UI
+  - region1
+  - reigon2
   layers:
   - Default
   - TransparentFX
