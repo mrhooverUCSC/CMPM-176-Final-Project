@@ -13,15 +13,9 @@ public class clickScript : MonoBehaviour
 
     public void ToggleVisibility()
     {
-        //var render = GameObject.GetComponentsInChildren<GameObject>();
-        //foreach (GameObject obj in render)
-        //{
-        //    if (obj.tag == "UI")
-        //    {
-        //        obj.activeSelf = !obj.activeSelf;
-        //    }
-        //}
-        var rotation = GameObject.Find("RotationUI");
-        rotation.SetActive(!rotation.activeSelf);
+        Tile[] Tiles = FindObjectsOfType<Tile>();
+        GameObject test = Tiles[0].gameObject;
+        GameObject UI = test.transform.GetChild(0).gameObject;
+        UI.SetActive(!UI.activeSelf);
     }
 }
