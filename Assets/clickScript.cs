@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class clickScript : MonoBehaviour
 {
-    // Update is called once per frame
-    void Update()
+
+    //THIS NEEDS TO BE UPDATED TO BE THE TILE THEY CLICK ON
+    public GameObject GetUI()
     {
-        //if tile is clicked on
-            //ToggleVisibility()
+        Canvas[] gameBoard = FindObjectsOfType<Canvas>();
+        GameObject test = gameBoard[0].gameObject;
+        return test.transform.GetChild(0).gameObject;
     }
+
+    //GameObject UI2 = clickScript1.GetUI();
+    //UI2.transform.Rotate(0, 0, -60);
 
     public void ToggleVisibility()
     {
-        Tile[] Tiles = FindObjectsOfType<Tile>();
-        GameObject test = Tiles[0].gameObject;
-        GameObject UI = test.transform.GetChild(0).gameObject;
+        GameObject UI = GetUI();
         UI.SetActive(!UI.activeSelf);
     }
 }
