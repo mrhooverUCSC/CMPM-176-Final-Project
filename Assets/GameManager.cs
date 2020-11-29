@@ -30,12 +30,12 @@ public class GameManager : MonoBehaviour
         
     }
 
-  public void RandomizeBoard() {
-      foreach(Tile t in tiles)
-      {
+    public void RandomizeBoard() {
+        foreach(Tile t in tiles)
+        {
          t.Randomize();
-      }
-  }
+        }
+    }
 
     private void make_adjacency()
     {
@@ -75,4 +75,21 @@ public class GameManager : MonoBehaviour
             adjacency.Add(t, adj);
         }
     }
+    public void RotateFirstTileLeft()
+    {
+        Tile[] Tiles = FindObjectsOfType<Tile>();
+        Tile firstTile = Tiles[0];
+        firstTile.RotateLeft(1);
+    }
+
+    public void RotateFirstTileRight()
+    {
+        Tile[] Tiles = FindObjectsOfType<Tile>();
+        Tile firstTile = Tiles[0];
+        firstTile.RotateRight(1);
+    }
 }
+
+
+
+

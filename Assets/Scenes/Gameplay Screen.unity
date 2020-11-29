@@ -3026,8 +3026,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1935162209}
-        m_TargetAssemblyTypeName: RightArrowClick, Assembly-CSharp
+      - m_Target: {fileID: 1935162207}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: RotateFirstTileRight
         m_Mode: 1
         m_Arguments:
@@ -3058,7 +3058,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12790,8 +12790,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1935162210}
-        m_TargetAssemblyTypeName: LeftArrowClick, Assembly-CSharp
+      - m_Target: {fileID: 1935162207}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: RotateFirstTileLeft
         m_Mode: 1
         m_Arguments:
