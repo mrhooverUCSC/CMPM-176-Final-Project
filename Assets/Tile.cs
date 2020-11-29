@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
+    public clickScript clickScript1;
     [SerializeField] Sprite[] tileImgs;
     bool[] openings;
     bool[] walled;
@@ -114,8 +115,10 @@ public class Tile : MonoBehaviour
         GameManager manager = FindObjectOfType<GameManager>();
         manager.ClearSelection();
         isSelected = true;
+        MySingleton.Instance.selectedTile = this;
         GetComponent<SpriteRenderer>().color = Color.gray;
     }
+
 
     public bool IsSelect()
     {
@@ -127,4 +130,5 @@ public class Tile : MonoBehaviour
         isSelected = false;
         GetComponent<SpriteRenderer>().color = Color.white;
     }
+
 }

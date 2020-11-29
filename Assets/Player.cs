@@ -11,21 +11,16 @@ public class Player : MonoBehaviour
         tiles = FindObjectsOfType<Tile>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void Move()
     {
         foreach (Tile tile in tiles)
         {
-            if(tile.IsSelect())
+            if (tile.IsSelect())
             {
                 float posx = tile.transform.position.x;
                 float posy = tile.transform.position.y;
-                transform.position = new Vector3 (posx, posy);
+                transform.position = new Vector3(posx, posy);
             }
         }
     }
