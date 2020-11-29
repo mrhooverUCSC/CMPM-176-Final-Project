@@ -30,13 +30,20 @@ public class GameManager : MonoBehaviour
         
     }
 
-  public void RandomizeBoard() {
-      foreach(Tile t in tiles)
-      {
-         t.Randomize();
-      }
-  }
+    public void RandomizeBoard() {
+        foreach(Tile t in tiles)
+        {
+            t.Randomize();
+        }
+    }
 
+    public void ClearSelection()
+    {
+        foreach(Tile t in tiles)
+        {
+            t.ResetSelection();
+        }
+    }
     private void make_adjacency()
     {
         foreach(Tile t in tiles){
