@@ -9,6 +9,7 @@ public class Tile : MonoBehaviour
     bool[] openings;
     bool[] walled;
     bool[][] tileOpeningList;
+    bool isSelected;
     // Start is called before the first frame update
     void Start()
     {
@@ -108,4 +109,26 @@ public class Tile : MonoBehaviour
             times--;
         }
     }
+    
+    public void OnMouseDown()
+    {
+        GameManager manager = FindObjectOfType<GameManager>();
+        manager.ClearSelection();
+        isSelected = true;
+        MySingleton.Instance.selectedTile = this;
+        GetComponent<SpriteRenderer>().color = Color.gray;
+    }
+
+
+    public bool IsSelect()
+    {
+        return isSelected;
+    }
+
+    public void ResetSelection()
+    {
+        isSelected = false;
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
 }

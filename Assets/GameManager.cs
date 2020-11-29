@@ -2,6 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public class MySingleton : Singleton<MySingleton>
+{
+    // (Optional) Prevent non-singleton constructor use.
+    protected MySingleton() { }
+
+    // Then add whatever code to the class you need as you normally would.
+    public Tile selectedTile;
+}
+
+
+
 public class GameManager : MonoBehaviour
 {
     Tile[] tiles; // automatically make and add the tiles with appropriate tags
@@ -37,7 +49,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void make_adjacency()
+
+    public void ClearSelection()
+    {
+        if (MySingleton.Instance.selectedTile)
+        {
+            MySingleton.Instance.selectedTile.ResetSelection();
+        }
+        //foreach(Tile t in tiles)
+        //{
+        //    t.ResetSelection();
+        //}
+    }
+
+
+        private void make_adjacency()
     {
         foreach(Tile t in tiles){
             Vector3 pos = t.transform.position;
@@ -77,16 +103,19 @@ public class GameManager : MonoBehaviour
     }
     public void RotateFirstTileLeft()
     {
-        Tile[] Tiles = FindObjectsOfType<Tile>();
-        Tile firstTile = Tiles[0];
-        firstTile.RotateLeft(1);
+        if (MySingleton.Instance.selectedTile)
+        {
+            MySingleton.Instance.selectedTile.RotateLeft(1);
+        }
+            
     }
 
     public void RotateFirstTileRight()
     {
-        Tile[] Tiles = FindObjectsOfType<Tile>();
-        Tile firstTile = Tiles[0];
-        firstTile.RotateRight(1);
+        if (MySingleton.Instance.selectedTile)
+        {
+            MySingleton.Instance.selectedTile.RotateRight(1);
+        }
     }
 }
 
