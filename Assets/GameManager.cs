@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-        private void make_adjacency()
+    private void make_adjacency()
     {
         foreach(Tile t in tiles){
             Vector3 pos = t.transform.position;

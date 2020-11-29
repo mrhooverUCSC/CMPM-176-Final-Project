@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
             {
                 float posx = tile.transform.position.x;
                 float posy = tile.transform.position.y;
-                transform.position = new Vector3(posx, posy);
+                transform.position = new Vector3(posx, posy, -5f);
             }
         }
     }
