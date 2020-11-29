@@ -10,9 +10,11 @@ public class Tile : MonoBehaviour
     bool[] walled;
     bool[][] tileOpeningList;
     bool isSelected;
+    Tile[] AdjcencyTiles;
     // Start is called before the first frame update
     void Start()
     {
+        AdjcencyTiles = new Tile[6];
         openings = new bool[6];
         walled = new bool[6] {false, false, false, false, false, false};
         tileOpeningList = new bool[13][];
@@ -131,4 +133,18 @@ public class Tile : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.white;
     }
 
+    //public void SetAdjcency(Tile[] adj)
+    //{
+    //    AdjcencyTiles.CopyTo(adj, 0);
+    //}
+
+    public bool[] GetOpenings()
+    {
+        return openings;
+    }
+
+    public bool[] GetWalled()
+    {
+        return walled;
+    }
 }

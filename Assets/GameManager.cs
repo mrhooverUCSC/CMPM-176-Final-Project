@@ -99,11 +99,44 @@ public class GameManager : MonoBehaviour
                 }
             }
             adjacency.Add(t, adj);
+            //t.SetAdjcency(adj);
         }
     }
+
+    public int GetAdjcency(Tile source, Tile target)
+    {
+        Vector3 spos = source.transform.position;
+        Vector3 tpos = target.transform.position;
+        if (Vector3.Distance(spos, tpos + up) < .1)
+        {
+            return 0;
+        }
+        else if (Vector3.Distance(spos, tpos + up_right) < .1)
+        {
+            return 1;
+        }
+        else if (Vector3.Distance(spos, tpos + down_right) < .1)
+        {
+            return 2;
+        }
+        else if (Vector3.Distance(spos, tpos + down) < .1)
+        {
+            return 3;
+        }
+        else if (Vector3.Distance(spos, tpos + down_left) < .1)
+        {
+            return 4;
+        }
+        else if (Vector3.Distance(spos, tpos + up_left) < .1)
+        {
+            return 5;
+        }
+        return -1;
+    }
+
     public void RotateFirstTileLeft()
     {
-        if (MySingleton.Instance.selectedTile)
+        if (MySingleton.Instance.selectedTile && MySingleton.Instance.selectedTile.IsSelect())
         {
             MySingleton.Instance.selectedTile.RotateLeft(1);
         }
@@ -112,7 +145,7 @@ public class GameManager : MonoBehaviour
 
     public void RotateFirstTileRight()
     {
-        if (MySingleton.Instance.selectedTile)
+        if (MySingleton.Instance.selectedTile && MySingleton.Instance.selectedTile.IsSelect())
         {
             MySingleton.Instance.selectedTile.RotateRight(1);
         }
