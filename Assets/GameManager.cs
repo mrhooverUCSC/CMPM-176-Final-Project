@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 
@@ -16,6 +17,10 @@ public class MySingleton : Singleton<MySingleton>
 
 public class GameManager : MonoBehaviour
 {
+    int turnIndex = 0;
+    public Turn[] turns;
+    public bool buttonPressed;
+    
     Tile[] tiles; // automatically make and add the tiles with appropriate tags
     [SerializeField] Tile test_tile;
     Vector3 up = new Vector3(0, -1, 0); // distance comparisons
@@ -31,24 +36,31 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        buttonPressed = false;
         tiles = FindObjectsOfType<Tile>();
         RandomizeBoard();
         make_adjacency();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-
+        if (turns[turnIndex].Execute(this)) //if turn is over
+        {
+            turnIndex++;
+            if (turnIndex > turns.Length - 1) //if the last player has taken their turn
+            {
+                turnIndex = 0;
+            }
+        }
     }
 
-    public void RandomizeBoard() {
+    public void RandomizeBoard() 
+    {
         foreach(Tile t in tiles)
         {
          t.Randomize();
         }
     }
-
 
     public void ClearSelection()
     {
@@ -56,12 +68,7 @@ public class GameManager : MonoBehaviour
         {
             MySingleton.Instance.selectedTile.ResetSelection();
         }
-        //foreach(Tile t in tiles)
-        //{
-        //    t.ResetSelection();
-        //}
     }
-
 
     private void make_adjacency()
     {
@@ -132,6 +139,24 @@ public class GameManager : MonoBehaviour
             return 5;
         }
         return -1;
+    }
+
+    public GameObject GetUI()
+    {
+        Canvas[] gameBoard = FindObjectsOfType<Canvas>();
+        GameObject test = gameBoard[0].gameObject;
+        return test.transform.GetChild(0).gameObject;
+    }
+
+    public void ToggleVisibility()
+    {
+        GameObject UI = GetUI();
+        UI.SetActive(!UI.activeSelf);
+    }
+
+    public void Press()
+    {
+        buttonPressed = true;
     }
 
     public void RotateFirstTileLeft()

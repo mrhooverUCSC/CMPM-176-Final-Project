@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    public clickScript clickScript1;
     [SerializeField] Sprite[] tileImgs;
     bool[] openings;
     bool[] walled;
