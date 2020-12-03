@@ -10922,18 +10922,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5530196929528833450, guid: 00fd966b8eb27f741a87f3000e12597b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7056250852468958255, guid: 00fd966b8eb27f741a87f3000e12597b, type: 3}
       propertyPath: m_Name
       value: TestPawn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00fd966b8eb27f741a87f3000e12597b, type: 3}
+--- !u!1 &1359786510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7056250852468958255, guid: 00fd966b8eb27f741a87f3000e12597b, type: 3}
+  m_PrefabInstance: {fileID: 1359786509}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1359786511 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1359786511, guid: 00fd966b8eb27f741a87f3000e12597b, type: 3}
   m_PrefabInstance: {fileID: 1359786509}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1359786510}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ec9fcb12677ad746b8c83f473a72268, type: 3}
@@ -14832,6 +14841,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 665c521ddfcc99a4caf1abcb8845b694, type: 2}
   buttonPressed: 0
   test_tile: {fileID: 0}
+  tester: {fileID: 1359786510}
+  main_camera: {fileID: 519420031}
 --- !u!1001 &1951380074
 PrefabInstance:
   m_ObjectHideFlags: 0

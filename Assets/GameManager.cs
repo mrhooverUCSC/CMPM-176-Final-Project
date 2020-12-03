@@ -23,12 +23,17 @@ public class GameManager : MonoBehaviour
     
     Tile[] tiles; // automatically make and add the tiles with appropriate tags
     [SerializeField] Tile test_tile;
+    [SerializeField] GameObject tester; // remove the tester object for the wall objects
+    [SerializeField] Camera main_camera;
     Vector3 up = new Vector3(0, -1, 0); // distance comparisons
     Vector3 up_right = new Vector3(-0.9f, -0.5f, 0.0f);
     Vector3 down_right = new Vector3(-0.9f, +0.5f, 0.0f);
     Vector3 down = new Vector3(0, 1, 0.0f);
     Vector3 down_left = new Vector3(+0.9f, +0.5f, 0.0f);
     Vector3 up_left = new Vector3(+0.9f, -0.5f, 0.0f);
+
+    Vector3[] edge_distances;
+    bool holding_tile = true;
 
     Dictionary<Tile, Tile[]> adjacency= new Dictionary<Tile, Tile[]>();
    // walls_placed[]; // holds how many walls each player has on the board for rotations/movement
@@ -38,13 +43,47 @@ public class GameManager : MonoBehaviour
     {
         buttonPressed = false;
         tiles = FindObjectsOfType<Tile>();
+        edge_distances = new Vector3[] { up, up_right, down_right, down, down_left, up_left};
         RandomizeBoard();
         make_adjacency();
     }
 
     private void Update()
     {
-        if (turns[turnIndex].Execute(this)) //if turn is over
+
+      if(holding_tile) {
+        Vector3 mouse_position = main_camera.ScreenToWorldPoint(Input.mousePosition);
+
+        Tile closest = tiles[0];
+        double distance = Vector3.Distance(closest.transform.position, mouse_position);
+        foreach(Tile t in tiles) {
+          if(distance > Vector3.Distance(t.transform.position, mouse_position)) {
+            closest = t;
+            distance = Vector3.Distance(t.transform.position, mouse_position);
+          }
+        }
+        // tester.transform.position = closest.transform.position;
+
+        Vector3 closest_edge = edge_distances[0] / 2;
+        double edge_distance = Mathf.Infinity;
+        for(int i = 0; i < edge_distances.Length; i++) {
+          if(edge_distance > Vector3.Distance(mouse_position, closest.transform.position - edge_distances[i] / 2) && adjacency[closest][i]) {
+            closest_edge = edge_distances[i] / 2;
+            edge_distance = Vector3.Distance(mouse_position, closest.transform.position - edge_distances[i] / 2);
+          }
+        }
+
+        tester.transform.position = closest.transform.position - closest_edge; // replace "tester" with the wall object
+
+        //Debug.Log(closest.transform.position);
+        //Debug.Log(main_camera.ScreenToWorldPoint(Input.mousePosition));
+        if(Input.GetMouseButtonDown(0)) {
+          holding_tile = false;
+          // return both tiles and which index is blocked on each
+          // increment walls_placed for active player
+        }
+      }
+    if (turns[turnIndex].Execute(this)) //if turn is over
         {
             turnIndex++;
             if (turnIndex > turns.Length - 1) //if the last player has taken their turn
