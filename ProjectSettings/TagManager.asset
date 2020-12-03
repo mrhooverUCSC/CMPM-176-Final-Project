@@ -7,6 +7,7 @@ TagManager:
   - UI
   - region1
   - reigon2
+  - Wall
   layers:
   - Default
   - TransparentFX

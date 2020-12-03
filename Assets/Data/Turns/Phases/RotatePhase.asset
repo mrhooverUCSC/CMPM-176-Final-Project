@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20670408ca12fbb4ab485379b22a36f6, type: 3}
   m_Name: RotatePhase
   m_EditorClassIdentifier: 
-  phaseName: 
+  phaseName: Rotate
   forceExit: 0

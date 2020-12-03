@@ -114,6 +114,10 @@ public class Tile : MonoBehaviour
     public void OnMouseDown()
     {
         GameManager manager = FindObjectOfType<GameManager>();
+        if(manager.GetCurrentPhaseName() == "Wall")
+        {
+            return;
+        }
         manager.ClearSelection();
         isSelected = true;
         MySingleton.Instance.selectedTile = this;

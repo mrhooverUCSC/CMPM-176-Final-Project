@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     bool holding_tile = true;
 
     Dictionary<Tile, Tile[]> adjacency= new Dictionary<Tile, Tile[]>();
-   // walls_placed[]; // holds how many walls each player has on the board for rotations/movement
+    // walls_placed[]; // holds how many walls each player has on the board for rotations/movement
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         playerList = FindObjectsOfType<Player>();
         tiles = FindObjectsOfType<Tile>();
         currentPlayer = playerList[playerIndex];
+        edge_distances = new Vector3[6]{ up, up_right, down_right, down, down_left, up_left };
         RandomizeBoard();
         make_adjacency();
     }
@@ -229,5 +230,10 @@ public class GameManager : MonoBehaviour
         {
             currentPlayer.Move();
         }
+    }
+
+    public string GetCurrentPhaseName()
+    {
+        return turns[turnIndex].GetCurrentPhase().phaseName;
     }
 }
