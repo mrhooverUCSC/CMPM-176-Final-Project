@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     Tile[] tiles;
     Tile playerstand;
+    [SerializeField] Sprite playerSprite;
     // Start is called before the first frame update
     void Start()
     {

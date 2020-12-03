@@ -35,4 +35,10 @@ public class Turn : ScriptableObject
     {
         phases[phaseIndex].forceExit = true;
     }
+
+    public Phase GetCurrentPhase()
+    {
+        Debug.Log(phases[phaseIndex].phaseName);
+        return phases[phaseIndex];
+    }
 }

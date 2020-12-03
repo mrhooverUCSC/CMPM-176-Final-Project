@@ -58,12 +58,12 @@ public class Tile : MonoBehaviour
         transform.rotation = Quaternion.identity;
         RotateLeft(leftRotate);
         RotateRight(rightRotate);
-        Debug.Log(openings[0].ToString());
-        Debug.Log(openings[1].ToString());
-        Debug.Log(openings[2].ToString());
-        Debug.Log(openings[3].ToString());
-        Debug.Log(openings[4].ToString());
-        Debug.Log(openings[5].ToString());
+        //Debug.Log(openings[0].ToString());
+        //Debug.Log(openings[1].ToString());
+        //Debug.Log(openings[2].ToString());
+        //Debug.Log(openings[3].ToString());
+        //Debug.Log(openings[4].ToString());
+        //Debug.Log(openings[5].ToString());
         Debug.Log("Done");
     }
 

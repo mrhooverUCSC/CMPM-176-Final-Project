@@ -20,7 +20,10 @@ public class GameManager : MonoBehaviour
     int turnIndex = 0;
     public Turn[] turns;
     public bool buttonPressed;
-    
+    public Player[] playerList;
+    int playerIndex = 0;
+    public Player currentPlayer;
+
     Tile[] tiles; // automatically make and add the tiles with appropriate tags
     [SerializeField] Tile test_tile;
     Vector3 up = new Vector3(0, -1, 0); // distance comparisons
@@ -37,7 +40,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         buttonPressed = false;
+        playerList = FindObjectsOfType<Player>();
         tiles = FindObjectsOfType<Tile>();
+        currentPlayer = playerList[playerIndex];
         RandomizeBoard();
         make_adjacency();
     }
@@ -50,6 +55,8 @@ public class GameManager : MonoBehaviour
             if (turnIndex > turns.Length - 1) //if the last player has taken their turn
             {
                 turnIndex = 0;
+                Debug.Log("Next Player");
+                currentPlayer = playerList[++playerIndex % playerList.Length]; 
             }
         }
     }
@@ -157,6 +164,7 @@ public class GameManager : MonoBehaviour
     public void Press()
     {
         buttonPressed = true;
+        ClearSelection();
     }
 
     public void RotateFirstTileLeft()
@@ -173,6 +181,15 @@ public class GameManager : MonoBehaviour
         if (MySingleton.Instance.selectedTile && MySingleton.Instance.selectedTile.IsSelect())
         {
             MySingleton.Instance.selectedTile.RotateRight(1);
+        }
+    }
+
+    public void PlayerMove()
+    {
+        //Debug.Log(turns[turnIndex].GetCurrentPhase().phaseName);
+        if (turns[turnIndex].GetCurrentPhase().phaseName == "Move")
+        {
+            currentPlayer.Move();
         }
     }
 }

@@ -6,7 +6,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Phases/Rotate")]
 public class Rotate : Phase
 {
-
+    void Start()
+    {
+        phaseName = "Rotate";
+    }
     public override bool IsComplete(GameManager gm)
     {
         //if next phase button is pressed return true
@@ -24,11 +27,14 @@ public class Rotate : Phase
 
     public override void OnEndPhase(GameManager gm)
     {
+        isInit = false;
+        forceExit = false;
         gm.buttonPressed = false;
     }
 
     void RotatePawn(GameManager gm)
     {
+        gm.ToggleVisibility();
         //show rotate UI
         //hide non rotate UI
     }

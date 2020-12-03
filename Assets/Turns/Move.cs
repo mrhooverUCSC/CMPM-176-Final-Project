@@ -5,6 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Phases/Move")]
 public class Move : Phase
 {
+    public void Awake()
+    {
+        phaseName = "Move";
+    }
 
     public override bool IsComplete(GameManager gm)
     {
@@ -23,6 +27,8 @@ public class Move : Phase
 
     public override void OnEndPhase(GameManager gm)
     {
+        isInit = false;
+        forceExit = false;
         gm.buttonPressed = false;
     }
 
