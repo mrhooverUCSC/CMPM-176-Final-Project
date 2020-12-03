@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Tile[] tiles;
+    [SerializeField] Walls[] walls;
+    public int wallindex;
     Tile playerstand;
     [SerializeField] Sprite playerSprite;
     // Start is called before the first frame update

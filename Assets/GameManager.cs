@@ -11,6 +11,7 @@ public class MySingleton : Singleton<MySingleton>
 
     // Then add whatever code to the class you need as you normally would.
     public Tile selectedTile;
+    public Walls selectedWall;
 }
 
 
@@ -25,8 +26,7 @@ public class GameManager : MonoBehaviour
     public Player currentPlayer;
 
     Tile[] tiles; // automatically make and add the tiles with appropriate tags
-    [SerializeField] Tile test_tile;
-    [SerializeField] GameObject tester; // remove the tester object for the wall objects
+    [SerializeField] Walls tester; // remove the tester object for the wall objects
     [SerializeField] Camera main_camera;
     Vector3 up = new Vector3(0, -1, 0); // distance comparisons
     Vector3 up_right = new Vector3(-0.9f, -0.5f, 0.0f);
@@ -36,7 +36,8 @@ public class GameManager : MonoBehaviour
     Vector3 up_left = new Vector3(+0.9f, -0.5f, 0.0f);
 
     Vector3[] edge_distances;
-    bool holding_tile = true;
+    public bool holding_tile = false;
+    public bool placeMode = false;
 
     Dictionary<Tile, Tile[]> adjacency= new Dictionary<Tile, Tile[]>();
     // walls_placed[]; // holds how many walls each player has on the board for rotations/movement
@@ -77,13 +78,19 @@ public class GameManager : MonoBehaviour
             edge_distance = Vector3.Distance(mouse_position, closest.transform.position - edge_distances[i] / 2);
           }
         }
-
-        tester.transform.position = closest.transform.position - closest_edge; // replace "tester" with the wall object
+        if(MySingleton.Instance.selectedWall && MySingleton.Instance.selectedWall.IsSelected())
+        {
+                MySingleton.Instance.selectedWall.gameObject.transform.position = closest.transform.position - closest_edge; // replace "tester" with the wall object
+                MySingleton.Instance.selectedWall.isPlaced = true;
+        }
+        
 
         //Debug.Log(closest.transform.position);
         //Debug.Log(main_camera.ScreenToWorldPoint(Input.mousePosition));
-        if(Input.GetMouseButtonDown(0)) {
+        if(Input.GetMouseButtonDown(0) && placeMode) {
           holding_tile = false;
+          placeMode = false;
+          ClearSelection();
           // return both tiles and which index is blocked on each
           // increment walls_placed for active player
         }
@@ -113,6 +120,10 @@ public class GameManager : MonoBehaviour
         if (MySingleton.Instance.selectedTile)
         {
             MySingleton.Instance.selectedTile.ResetSelection();
+        }
+        if (MySingleton.Instance.selectedWall)
+        {
+            MySingleton.Instance.selectedWall.ResetSelection();
         }
     }
 
@@ -235,5 +246,15 @@ public class GameManager : MonoBehaviour
     public string GetCurrentPhaseName()
     {
         return turns[turnIndex].GetCurrentPhase().phaseName;
+    }
+
+    public void triggerMode()
+    {
+        StartCoroutine(waiter());
+    }
+    IEnumerator waiter()
+    {
+        yield return new WaitForSeconds(2);
+        placeMode = true;
     }
 }

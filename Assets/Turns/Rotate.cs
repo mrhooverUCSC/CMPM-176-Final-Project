@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Phases/Rotate")]
 public class Rotate : Phase
 {
-    void Start()
+    void Awake()
     {
         phaseName = "Rotate";
     }

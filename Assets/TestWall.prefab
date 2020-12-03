@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 15544816075276486}
   - component: {fileID: 15544816075276485}
+  - component: {fileID: -8196776625312643524}
+  - component: {fileID: 367712841234198495}
   m_Layer: 0
   m_Name: TestWall
   m_TagString: Wall
@@ -82,3 +84,47 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-8196776625312643524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15544816075276484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5dd881e5579198429db71d9512d58d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlaced: 0
+--- !u!60 &367712841234198495
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15544816075276484}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.04, y: 2.62}
+    newSize: {x: 3.04, y: 2.62}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.774475, y: 1.292049}
+      - {x: 0.68317485, y: 1.3474836}
+      - {x: 1.5739607, y: -0.054496408}
+      - {x: 0.7755616, y: -1.3298165}
+      - {x: -0.76457274, y: -1.3546871}
+      - {x: -1.5934525, y: -0.002305746}
