@@ -56,6 +56,20 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if(GetCurrentPhaseName() == "Wall")
+        {
+            foreach (Tile tile in tiles)
+            {
+                tile.GetComponent<PolygonCollider2D>().enabled = false;
+            }
+        }
+        else
+        {
+            foreach (Tile tile in tiles)
+            {
+                tile.GetComponent<PolygonCollider2D>().enabled = true;
+            }
+        }
 
         if (holding_tile)
         {

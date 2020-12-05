@@ -16,6 +16,10 @@ public class Walls : MonoBehaviour
     private void OnMouseDown()
     {
         GameManager manager = FindObjectOfType<GameManager>();
+        if(manager.GetCurrentPhaseName() != "Wall")
+        {
+            return;
+        }
         manager.ClearSelection();
         manager.holding_tile = true;
         MySingleton.Instance.selectedWall = this;

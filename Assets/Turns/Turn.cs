@@ -38,7 +38,7 @@ public class Turn : ScriptableObject
 
     public Phase GetCurrentPhase()
     {
-        Debug.Log(phases[phaseIndex].phaseName);
+        //Debug.Log(phases[phaseIndex].phaseName);
         return phases[phaseIndex];
     }
 }
