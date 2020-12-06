@@ -39,7 +39,6 @@ public class GameManager : MonoBehaviour
     Vector3[] edge_distances;
     public bool holding_tile = false;
     public bool placeMode = false;
-    public bool removeMode = false;
 
     Dictionary<Tile, Tile[]> adjacency = new Dictionary<Tile, Tile[]>();
     // walls_placed[]; // holds how many walls each player has on the board for rotations/movement
@@ -303,16 +302,7 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator waiter()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1);
         placeMode = true;
-        removeMode = false;
-    }
-
-    public void triggerRemove()
-    {
-        removeMode = true;
-        placeMode = false;
-        MySingleton.Instance.selectedWall.transform.position = MySingleton.Instance.selectedWall.startLocation;
-        MySingleton.Instance.selectedWall.isPlaced = false;
     }
 }
