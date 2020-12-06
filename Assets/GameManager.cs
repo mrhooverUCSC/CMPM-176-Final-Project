@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
 
     public bool holding_tile = false;
     public bool placeMode = false;
+    public bool removeMode = false;
 
     public Dictionary<Tile, Tile[]> adjacency = new Dictionary<Tile, Tile[]>();
     Dictionary<int, WallObject> placed_walls = new Dictionary<int, WallObject>();
@@ -305,8 +306,17 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator waiter()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         placeMode = true;
+        removeMode = false;
+    }
+
+    public void triggerRemove()
+    {
+        removeMode = true;
+        placeMode = false;
+        MySingleton.Instance.selectedWall.transform.position = MySingleton.Instance.selectedWall.startLocation;
+        MySingleton.Instance.selectedWall.isPlaced = false;
     }
 
   public void wall_clicked() {
