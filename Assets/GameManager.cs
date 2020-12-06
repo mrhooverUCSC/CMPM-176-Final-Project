@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     int playerIndex = 0;
     public Player currentPlayer;
 
+
     Tile[] tiles; // automatically make and add the tiles with appropriate tags
     [SerializeField] Walls tester; // remove the tester object for the wall objects
     [SerializeField] Camera main_camera;
@@ -219,17 +220,43 @@ public class GameManager : MonoBehaviour
         return -1;
     }
 
-    public GameObject GetUI()
+    public void GetUI()
     {
         Canvas[] gameBoard = FindObjectsOfType<Canvas>();
         GameObject test = gameBoard[0].gameObject;
-        return test.transform.GetChild(0).gameObject;
-    }
+        Debug.Log(GetCurrentPhaseName());
+        if (GetCurrentPhaseName() == "Wall")
+        {
+            GameObject UI = test.transform.GetChild(0).gameObject;
+            UI.SetActive(!UI.activeSelf);
+            UI = test.transform.GetChild(2).gameObject;
+            if (UI.activeSelf)
+            {
+                UI.SetActive(!UI.activeSelf);
+            }
+        }
+        else if (GetCurrentPhaseName() == "Rotate")
+        {
 
-    public void ToggleVisibility()
-    {
-        GameObject UI = GetUI();
-        UI.SetActive(!UI.activeSelf);
+            GameObject UI = test.transform.GetChild(1).gameObject;
+            UI.SetActive(!UI.activeSelf);
+            UI = test.transform.GetChild(0).gameObject;
+            if (UI.activeSelf)
+            {
+                UI.SetActive(!UI.activeSelf);
+            }
+        }
+        else
+        {
+            GameObject UI = test.transform.GetChild(2).gameObject;
+            UI.SetActive(!UI.activeSelf);
+            UI = test.transform.GetChild(1).gameObject;
+            if (UI.activeSelf)
+            {
+                UI.SetActive(!UI.activeSelf);
+            }
+        }
+
     }
 
     public void Press()
