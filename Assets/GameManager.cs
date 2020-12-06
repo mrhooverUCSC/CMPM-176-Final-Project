@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (holding_tile)
+        if (holding_tile && placeMode)
         {
             Vector3 mouse_position = main_camera.ScreenToWorldPoint(Input.mousePosition);
 
@@ -302,7 +302,7 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator waiter()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         placeMode = true;
     }
 }
