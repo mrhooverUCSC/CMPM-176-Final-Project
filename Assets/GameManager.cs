@@ -318,4 +318,8 @@ public class GameManager : MonoBehaviour
         MySingleton.Instance.selectedWall.transform.position = MySingleton.Instance.selectedWall.startLocation;
         MySingleton.Instance.selectedWall.isPlaced = false;
     }
+
+  public void wall_clicked() {
+    Debug.Log("Matt says Hi");
+  }
 }
