@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: PlayerTurn
   m_EditorClassIdentifier: 
   phases:
+  - {fileID: 11400000, guid: 399317069d05772479338a64043957c1, type: 2}
   - {fileID: 11400000, guid: e4d02b284c77b76458b2a79c2fa3da84, type: 2}
   - {fileID: 11400000, guid: c4be2dab1e9ec7e419319fb3eff36947, type: 2}

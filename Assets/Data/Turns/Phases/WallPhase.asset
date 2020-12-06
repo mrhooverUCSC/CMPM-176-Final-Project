@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b59470adb13e5548bfc373ab9939471, type: 3}
-  m_Name: MovePhase
+  m_Script: {fileID: 11500000, guid: d4763f93ee15ac6429f6c573b1b77996, type: 3}
+  m_Name: WallPhase
   m_EditorClassIdentifier: 
   phaseName: Wall
   forceExit: 0

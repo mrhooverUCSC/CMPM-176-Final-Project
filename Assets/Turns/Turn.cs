@@ -8,13 +8,17 @@ public class Turn : ScriptableObject
 {
 
     public PlayerContainer player;
-    int phaseIndex;
+    int phaseIndex = 0;
     public Phase[] phases;
+
+    private void OnEnable()
+    {
+        phaseIndex = 0;
+    }
 
     public bool Execute(GameManager gm)
     {
         bool result = false;
-
         phases[phaseIndex].OnStartPhase(gm);
 
         if(phases[phaseIndex].IsComplete(gm))
@@ -38,7 +42,9 @@ public class Turn : ScriptableObject
 
     public Phase GetCurrentPhase()
     {
-        Debug.Log(phases[phaseIndex].phaseName);
+        //Debug.Log(phases[phaseIndex].phaseName);
         return phases[phaseIndex];
     }
 }
+
+

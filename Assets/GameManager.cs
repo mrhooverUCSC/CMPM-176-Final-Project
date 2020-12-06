@@ -24,23 +24,28 @@ public class GameManager : MonoBehaviour
     public Player[] playerList;
     int playerIndex = 0;
     public Player currentPlayer;
+    public int num_players;
 
     Tile[] tiles; // automatically make and add the tiles with appropriate tags
     [SerializeField] Walls tester; // remove the tester object for the wall objects
     [SerializeField] Camera main_camera;
+
     Vector3 up = new Vector3(0, -1, 0); // distance comparisons
     Vector3 up_right = new Vector3(-0.9f, -0.5f, 0.0f);
     Vector3 down_right = new Vector3(-0.9f, +0.5f, 0.0f);
     Vector3 down = new Vector3(0, 1, 0.0f);
     Vector3 down_left = new Vector3(+0.9f, +0.5f, 0.0f);
     Vector3 up_left = new Vector3(+0.9f, -0.5f, 0.0f);
-
     Vector3[] edge_distances;
+
     public bool holding_tile = false;
     public bool placeMode = false;
+    public bool removeMode = false;
 
-    Dictionary<Tile, Tile[]> adjacency = new Dictionary<Tile, Tile[]>();
-    // walls_placed[]; // holds how many walls each player has on the board for rotations/movement
+    public Dictionary<Tile, Tile[]> adjacency = new Dictionary<Tile, Tile[]>();
+    Dictionary<int, WallObject> placed_walls = new Dictionary<int, WallObject>();
+    [SerializeField] GameObject wall_prefab;
+    public int[] walls_placed; // holds how many walls each player has on the board for rotations/movement
 
     // Start is called before the first frame update
     void Start()
@@ -50,14 +55,29 @@ public class GameManager : MonoBehaviour
         tiles = FindObjectsOfType<Tile>();
         currentPlayer = playerList[playerIndex];
         edge_distances = new Vector3[6] { up, up_right, down_right, down, down_left, up_left };
+    walls_placed = new int[num_players];
         RandomizeBoard();
         make_adjacency();
     }
 
     private void Update()
     {
+        if(GetCurrentPhaseName() == "Wall")
+        {
+            foreach (Tile tile in tiles)
+            {
+                tile.GetComponent<PolygonCollider2D>().enabled = false;
+            }
+        }
+        else
+        {
+            foreach (Tile tile in tiles)
+            {
+                tile.GetComponent<PolygonCollider2D>().enabled = true;
+            }
+        }
 
-        if (holding_tile)
+        if (holding_tile && placeMode)
         {
             Vector3 mouse_position = main_camera.ScreenToWorldPoint(Input.mousePosition);
 
@@ -150,7 +170,6 @@ public class GameManager : MonoBehaviour
                 else if (Vector3.Distance(pos, cpos + up_right) < .1)
                 {
                     adj[1] = c;
-                    Debug.Log(true);
                 }
                 else if (Vector3.Distance(pos, cpos + down_right) < .1)
                 {
@@ -205,17 +224,43 @@ public class GameManager : MonoBehaviour
         return -1;
     }
 
-    public GameObject GetUI()
+    public void GetUI()
     {
         Canvas[] gameBoard = FindObjectsOfType<Canvas>();
         GameObject test = gameBoard[0].gameObject;
-        return test.transform.GetChild(0).gameObject;
-    }
+        Debug.Log(GetCurrentPhaseName());
+        if (GetCurrentPhaseName() == "Wall")
+        {
+            GameObject UI = test.transform.GetChild(0).gameObject;
+            UI.SetActive(!UI.activeSelf);
+            UI = test.transform.GetChild(2).gameObject;
+            if (UI.activeSelf)
+            {
+                UI.SetActive(!UI.activeSelf);
+            }
+        }
+        else if (GetCurrentPhaseName() == "Rotate")
+        {
 
-    public void ToggleVisibility()
-    {
-        GameObject UI = GetUI();
-        UI.SetActive(!UI.activeSelf);
+            GameObject UI = test.transform.GetChild(1).gameObject;
+            UI.SetActive(!UI.activeSelf);
+            UI = test.transform.GetChild(0).gameObject;
+            if (UI.activeSelf)
+            {
+                UI.SetActive(!UI.activeSelf);
+            }
+        }
+        else
+        {
+            GameObject UI = test.transform.GetChild(2).gameObject;
+            UI.SetActive(!UI.activeSelf);
+            UI = test.transform.GetChild(1).gameObject;
+            if (UI.activeSelf)
+            {
+                UI.SetActive(!UI.activeSelf);
+            }
+        }
+
     }
 
     public void Press()
@@ -261,7 +306,20 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator waiter()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         placeMode = true;
+        removeMode = false;
     }
+
+    public void triggerRemove()
+    {
+        removeMode = true;
+        placeMode = false;
+        MySingleton.Instance.selectedWall.transform.position = MySingleton.Instance.selectedWall.startLocation;
+        MySingleton.Instance.selectedWall.isPlaced = false;
+    }
+
+  public void wall_clicked() {
+    Debug.Log("Matt says Hi");
+  }
 }
