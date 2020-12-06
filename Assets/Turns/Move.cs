@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Phases/Move")]
 public class Move : Phase
 {
-    public void Awake()
+    void Awake()
     {
         phaseName = "Move";
     }
@@ -21,7 +21,7 @@ public class Move : Phase
         if (isInit)
             return;
         isInit = true;
-        Debug.Log("Should print");
+        Debug.Log("Move Phase");
         MakeMove(gm);
     }
 
@@ -34,7 +34,7 @@ public class Move : Phase
 
     void MakeMove(GameManager gm)
     {
-        gm.ToggleVisibility();
+        gm.GetUI();
         //show move UI
         //hide non move UI
     }

@@ -25,7 +25,6 @@ public class Walls : MonoBehaviour
         MySingleton.Instance.selectedWall = this;
         isSelect = true;
         GetComponent<SpriteRenderer>().color = Color.white;
-        manager.triggerMode();
     }
 
     public bool IsSelected()

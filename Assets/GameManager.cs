@@ -26,8 +26,8 @@ public class GameManager : MonoBehaviour
     public Player currentPlayer;
     public int num_players;
 
-    Tile[] tiles;
-    [SerializeField] Walls tester;
+    Tile[] tiles; // automatically make and add the tiles with appropriate tags
+    [SerializeField] Walls tester; // remove the tester object for the wall objects
     [SerializeField] Camera main_camera;
 
     Vector3 up = new Vector3(0, -1, 0); // distance comparisons
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (holding_tile)
+        if (holding_tile && placeMode)
         {
             Vector3 mouse_position = main_camera.ScreenToWorldPoint(Input.mousePosition);
 
@@ -223,17 +223,43 @@ public class GameManager : MonoBehaviour
         return -1;
     }
 
-    public GameObject GetUI()
+    public void GetUI()
     {
         Canvas[] gameBoard = FindObjectsOfType<Canvas>();
         GameObject test = gameBoard[0].gameObject;
-        return test.transform.GetChild(0).gameObject;
-    }
+        Debug.Log(GetCurrentPhaseName());
+        if (GetCurrentPhaseName() == "Wall")
+        {
+            GameObject UI = test.transform.GetChild(0).gameObject;
+            UI.SetActive(!UI.activeSelf);
+            UI = test.transform.GetChild(2).gameObject;
+            if (UI.activeSelf)
+            {
+                UI.SetActive(!UI.activeSelf);
+            }
+        }
+        else if (GetCurrentPhaseName() == "Rotate")
+        {
 
-    public void ToggleVisibility()
-    {
-        GameObject UI = GetUI();
-        UI.SetActive(!UI.activeSelf);
+            GameObject UI = test.transform.GetChild(1).gameObject;
+            UI.SetActive(!UI.activeSelf);
+            UI = test.transform.GetChild(0).gameObject;
+            if (UI.activeSelf)
+            {
+                UI.SetActive(!UI.activeSelf);
+            }
+        }
+        else
+        {
+            GameObject UI = test.transform.GetChild(2).gameObject;
+            UI.SetActive(!UI.activeSelf);
+            UI = test.transform.GetChild(1).gameObject;
+            if (UI.activeSelf)
+            {
+                UI.SetActive(!UI.activeSelf);
+            }
+        }
+
     }
 
     public void Press()
@@ -279,7 +305,7 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator waiter()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         placeMode = true;
     }
 
