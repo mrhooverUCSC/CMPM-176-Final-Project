@@ -22,8 +22,6 @@ public class Wall : Phase
         if (isInit)
             return;
         isInit = true;
-        Debug.Log("Wall Phase");
-        WallMake(gm);
     }
 
     public override void OnEndPhase(GameManager gm)
@@ -31,11 +29,5 @@ public class Wall : Phase
         isInit = false;
         forceExit = false;
         gm.buttonPressed = false;
-    }
-    
-    void WallMake(GameManager gm)
-    {
-        //show wall UI for player X
-        gm.GetUI();
     }
 }

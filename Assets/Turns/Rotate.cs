@@ -22,7 +22,6 @@ public class Rotate : Phase
         if (isInit)
             return;
         isInit = true;
-        Debug.Log("Rotate Phase");
         RotatePawn(gm);
     }
 
@@ -35,7 +34,7 @@ public class Rotate : Phase
 
     void RotatePawn(GameManager gm)
     {
-        gm.GetUI();
+        gm.ToggleVisibility();
         //show rotate UI
         //hide non rotate UI
     }
