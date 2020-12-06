@@ -21,7 +21,7 @@ public class WallObject : MonoBehaviour
     }
 
   public void OnMouseDown() {
-    // 
+    // gm.function();
   }
 
   void set_owner(int o) {

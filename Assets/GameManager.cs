@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     public Dictionary<Tile, Tile[]> adjacency = new Dictionary<Tile, Tile[]>();
     Dictionary<int, WallObject> placed_walls = new Dictionary<int, WallObject>();
     [SerializeField] GameObject wall_prefab;
-    public int walls_placed[num_players]; // holds how many walls each player has on the board for rotations/movement
+    public int[] walls_placed; // holds how many walls each player has on the board for rotations/movement
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         tiles = FindObjectsOfType<Tile>();
         currentPlayer = playerList[playerIndex];
         edge_distances = new Vector3[6] { up, up_right, down_right, down, down_left, up_left };
-        walls_placed = new int[]
+    walls_placed = new int[num_players];
         RandomizeBoard();
         make_adjacency();
     }
