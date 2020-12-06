@@ -1124,11 +1124,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
   m_PrefabInstance: {fileID: 126372704}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &145703432 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 15544816075276484, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
-  m_PrefabInstance: {fileID: 15544815952020172}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &153162496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15080,9 +15075,10 @@ MonoBehaviour:
   buttonPressed: 0
   playerList: []
   currentPlayer: {fileID: 0}
-  test_tile: {fileID: 0}
-  tester: {fileID: 145703432}
+  tester: {fileID: 15544815952020173}
   main_camera: {fileID: 519420031}
+  holding_tile: 1
+  placeMode: 0
 --- !u!1001 &1951380074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16687,7 +16683,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -8196776625312643524, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
   m_PrefabInstance: {fileID: 15544815952020172}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 145703432}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5dd881e5579198429db71d9512d58d4, type: 3}
