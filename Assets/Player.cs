@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] Walls[] walls;
     public int wallindex;
     Tile playerstand;
-    [SerializeField] Sprite playerSprite;
+    [SerializeField] string name;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
                     float posy = tile.transform.position.y;
                     transform.position = new Vector3(posx, posy, -5f);
                     playerstand = tile;
+                    FindObjectOfType<GameManager>().moveTimes -= 1;
                     return;
                 }
                 else
@@ -59,5 +60,38 @@ public class Player : MonoBehaviour
                 
             }
         }
+    }
+
+    public int GetMoveTimes()
+    {
+        int count = 0;
+        foreach(Walls wall in walls)
+        {
+            if(wall.isPlaced)
+            {
+                count++;
+            }
+        }
+        Debug.Log(count);
+        return count;
+    }
+
+    public int GetRotateTimes()
+    {
+        int count = 0;
+        Player[] players = FindObjectsOfType<Player>();
+        foreach(Player player in players)
+        {
+            if(player.tag != this.name)
+            {
+                count += player.GetMoveTimes();
+            }
+        }
+        count = Mathf.CeilToInt((float) count / 2);
+        if(count > 5)
+        {
+            count = 5;
+        }
+        return count;
     }
 }

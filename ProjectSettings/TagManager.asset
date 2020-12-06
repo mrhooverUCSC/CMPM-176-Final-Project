@@ -8,6 +8,8 @@ TagManager:
   - region1
   - reigon2
   - Wall
+  - Yellow
+  - Green
   layers:
   - Default
   - TransparentFX

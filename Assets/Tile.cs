@@ -64,7 +64,7 @@ public class Tile : MonoBehaviour
         //Debug.Log(openings[3].ToString());
         //Debug.Log(openings[4].ToString());
         //Debug.Log(openings[5].ToString());
-        Debug.Log("Done");
+        //Debug.Log("Done");
     }
 
     public void RotateLeft(int times)

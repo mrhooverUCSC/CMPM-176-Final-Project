@@ -22,6 +22,7 @@ public class Rotate : Phase
         if (isInit)
             return;
         isInit = true;
+        gm.rotateTimes = gm.currentPlayer.GetRotateTimes();
         Debug.Log("Rotate Phase");
         RotatePawn(gm);
     }

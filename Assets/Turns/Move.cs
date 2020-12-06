@@ -21,6 +21,7 @@ public class Move : Phase
         if (isInit)
             return;
         isInit = true;
+        gm.moveTimes = gm.currentPlayer.GetMoveTimes();
         Debug.Log("Move Phase");
         MakeMove(gm);
     }

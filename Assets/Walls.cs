@@ -26,7 +26,7 @@ public class Walls : MonoBehaviour
         manager.holding_tile = true;
         MySingleton.Instance.selectedWall = this;
         isSelect = true;
-        GetComponent<SpriteRenderer>().color = Color.white;
+        GetComponent<SpriteRenderer>().color = Color.gray;
 
     }
 
@@ -38,6 +38,6 @@ public class Walls : MonoBehaviour
     public void ResetSelection()
     {
         isSelect = false;
-        GetComponent<SpriteRenderer>().color = Color.black;
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

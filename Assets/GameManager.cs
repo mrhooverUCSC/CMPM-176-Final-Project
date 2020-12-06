@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     public Player[] playerList;
     int playerIndex = 0;
     public Player currentPlayer;
+    public int moveTimes;
+    public int rotateTimes;
 
 
     Tile[] tiles; // automatically make and add the tiles with appropriate tags
@@ -58,6 +60,14 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if(GetCurrentPhaseName() == "Move" && currentPlayer.GetMoveTimes() == 0)
+        {
+            Press();
+        }
+        if (GetCurrentPhaseName() == "Rotate" && currentPlayer.GetRotateTimes() == 0)
+        {
+            Press();
+        }
         if (GetCurrentPhaseName() == "Wall")
         {
             foreach (Tile tile in tiles)
@@ -166,7 +176,6 @@ public class GameManager : MonoBehaviour
                 else if (Vector3.Distance(pos, cpos + up_right) < .1)
                 {
                     adj[1] = c;
-                    Debug.Log(true);
                 }
                 else if (Vector3.Distance(pos, cpos + down_right) < .1)
                 {
@@ -225,7 +234,7 @@ public class GameManager : MonoBehaviour
     {
         Canvas[] gameBoard = FindObjectsOfType<Canvas>();
         GameObject test = gameBoard[0].gameObject;
-        Debug.Log(GetCurrentPhaseName());
+       // Debug.Log(GetCurrentPhaseName());
         if (GetCurrentPhaseName() == "Wall")
         {
             GameObject UI = test.transform.GetChild(0).gameObject;
@@ -271,6 +280,11 @@ public class GameManager : MonoBehaviour
         if (MySingleton.Instance.selectedTile && MySingleton.Instance.selectedTile.IsSelect())
         {
             MySingleton.Instance.selectedTile.RotateLeft(1);
+            rotateTimes--;
+        }
+        if (rotateTimes == 0)
+        {
+            Press();
         }
 
     }
@@ -280,6 +294,11 @@ public class GameManager : MonoBehaviour
         if (MySingleton.Instance.selectedTile && MySingleton.Instance.selectedTile.IsSelect())
         {
             MySingleton.Instance.selectedTile.RotateRight(1);
+            rotateTimes--;
+        }
+        if (rotateTimes == 0)
+        {
+            Press();
         }
     }
 
@@ -289,6 +308,10 @@ public class GameManager : MonoBehaviour
         if (turns[turnIndex].GetCurrentPhase().phaseName == "Move")
         {
             currentPlayer.Move();
+            if(moveTimes == 0)
+            {
+                Press();
+            }
         }
     }
 
