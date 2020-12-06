@@ -234,7 +234,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -158, y: 470}
+  m_AnchoredPosition: {x: 500, y: -157}
   m_SizeDelta: {x: 205.85168, y: 102.59845}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &18813248
@@ -3999,7 +3999,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 794.28, y: 125}
+  m_AnchoredPosition: {x: 500, y: 103}
   m_SizeDelta: {x: 281.69592, y: 117.468994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &472968237
@@ -8898,8 +8898,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 794.28, y: 291}
-  m_SizeDelta: {x: 281.69714, y: 121.796265}
+  m_AnchoredPosition: {x: 500, y: -33}
+  m_SizeDelta: {x: 244.25854, y: 121.796265}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1076808758
 MonoBehaviour:
@@ -15132,8 +15132,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 786.99, y: 444}
-  m_SizeDelta: {x: 267.11804, y: 87.304504}
+  m_AnchoredPosition: {x: 492.28003, y: 234}
+  m_SizeDelta: {x: 215.10046, y: 87.304504}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1773754001
 MonoBehaviour:
@@ -16465,18 +16465,15 @@ MonoBehaviour:
   buttonPressed: 0
   playerList: []
   currentPlayer: {fileID: 0}
-  tester: {fileID: 15544815952020173}
+  tester: {fileID: 0}
   main_camera: {fileID: 519420031}
-  holding_tile: 1
+  holding_tile: 0
   placeMode: 0
-<<<<<<< HEAD
   wall_prefab: {fileID: 6862450730096810943, guid: 8f75bc6e247c7a34197eefdd976cae52, type: 3}
 <<<<<<< HEAD
   walls_placed:
 =======
 >>>>>>> parent of d87f31b... debug
-=======
->>>>>>> parent of ffa7eca... Merge branch 'master' of https://github.com/mrhooverUCSC/CMPM-176-Final-Project
 --- !u!1001 &1951380074
 PrefabInstance:
   m_ObjectHideFlags: 0

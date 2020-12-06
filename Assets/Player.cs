@@ -19,6 +19,13 @@ public class Player : MonoBehaviour
     {
         GameManager manager = FindObjectOfType<GameManager>();
         int adjIndex = manager.GetAdjcency(source, target);
+        /*
+         * int adjIndex = -1;
+         * for(int i = 0; i < 6; i++){
+         *   if manager.adjacency[source][i] == target;
+         *     adjIndex = i;
+         * }
+         */
         if(adjIndex == -1)
         {
             return false;
