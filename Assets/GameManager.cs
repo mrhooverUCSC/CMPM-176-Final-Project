@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public Player currentPlayer;
     public int moveTimes;
     public int rotateTimes;
+    int wallIndex;
 
 
     Tile[] tiles; // automatically make and add the tiles with appropriate tags
@@ -107,6 +108,7 @@ public class GameManager : MonoBehaviour
                 {
                     closest_edge = edge_distances[i] / 2;
                     edge_distance = Vector3.Distance(mouse_position, closest.transform.position - edge_distances[i] / 2);
+                    wallIndex = i;
                 }
             }
             if (MySingleton.Instance.selectedWall && MySingleton.Instance.selectedWall.IsSelected())
@@ -120,11 +122,11 @@ public class GameManager : MonoBehaviour
             //Debug.Log(main_camera.ScreenToWorldPoint(Input.mousePosition));
             if (Input.GetMouseButtonDown(0) && placeMode)
             {
+                closest.GetWalled()[wallIndex] = true;
                 holding_tile = false;
                 placeMode = false;
                 ClearSelection();
                 // return both tiles and which index is blocked on each
-                // increment walls_placed for active player
             }
         }
         if (turns[turnIndex].Execute(this)) //if turn is over

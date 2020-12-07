@@ -72,7 +72,6 @@ public class Player : MonoBehaviour
                 count++;
             }
         }
-        Debug.Log(count);
         return count;
     }
 
@@ -82,7 +81,7 @@ public class Player : MonoBehaviour
         Player[] players = FindObjectsOfType<Player>();
         foreach(Player player in players)
         {
-            if(player.tag != this.name)
+            if(player.tag != name)
             {
                 count += player.GetMoveTimes();
             }
@@ -92,6 +91,7 @@ public class Player : MonoBehaviour
         {
             count = 5;
         }
+        Debug.Log(count);
         return count;
     }
 }
