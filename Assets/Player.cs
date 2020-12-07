@@ -27,8 +27,9 @@ public class Player : MonoBehaviour
         {
             bool sourceCheck = source.GetOpenings()[adjIndex];
             bool targetCheck = target.GetOpenings()[(adjIndex + 3) % 6];
-            bool wallCheck = source.GetWalled()[adjIndex]; 
-            if(sourceCheck && targetCheck && !wallCheck)
+            bool wallCheck = source.GetWalled()[adjIndex];
+            bool adjWall = target.GetWalled()[(adjIndex + 3) % 6];
+            if(sourceCheck && targetCheck && !wallCheck && !adjWall)
             {
                 return true;
             }

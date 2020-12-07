@@ -115,6 +115,8 @@ public class GameManager : MonoBehaviour
             {
                 MySingleton.Instance.selectedWall.gameObject.transform.position = closest.transform.position - closest_edge; // replace "tester" with the wall object
                 MySingleton.Instance.selectedWall.isPlaced = true;
+                MySingleton.Instance.selectedWall.attachedTile = closest;
+                MySingleton.Instance.selectedWall.edgeIndex = wallIndex;
             }
 
 
@@ -335,9 +337,14 @@ public class GameManager : MonoBehaviour
 
     public void triggerRemove()
     {
-        removeMode = true;
-        placeMode = false;
-        MySingleton.Instance.selectedWall.transform.position = MySingleton.Instance.selectedWall.startLocation;
-        MySingleton.Instance.selectedWall.isPlaced = false;
+        if(MySingleton.Instance.selectedWall.isPlaced)
+        {
+            MySingleton.Instance.selectedWall.attachedTile.GetWalled()[MySingleton.Instance.selectedWall.edgeIndex] = false;
+            MySingleton.Instance.selectedWall.attachedTile = null;
+            removeMode = true;
+            placeMode = false;
+            MySingleton.Instance.selectedWall.transform.position = MySingleton.Instance.selectedWall.startLocation;
+            MySingleton.Instance.selectedWall.isPlaced = false;
+        }   
     }
 }

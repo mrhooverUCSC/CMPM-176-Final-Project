@@ -7,6 +7,8 @@ public class Walls : MonoBehaviour
     public bool isPlaced;
     bool isSelect;
     public Vector3 startLocation;
+    public Tile attachedTile;
+    public int edgeIndex;
     // Start is called before the first frame update
     void Start()
     {
