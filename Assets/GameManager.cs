@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using UnityEngine.UI;
 using UnityEngine;
 
 
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
     Tile[] tiles; // automatically make and add the tiles with appropriate tags
     [SerializeField] Walls tester; // remove the tester object for the wall objects
     [SerializeField] Camera main_camera;
+    [SerializeField] Text remainText;
     Vector3 up = new Vector3(0, -1, 0); // distance comparisons
     Vector3 up_right = new Vector3(-0.9f, -0.5f, 0.0f);
     Vector3 down_right = new Vector3(-0.9f, +0.5f, 0.0f);
@@ -61,13 +63,21 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(GetCurrentPhaseName() == "Move" && currentPlayer.GetMoveTimes() == 0)
+        if(GetCurrentPhaseName() == "Move")
         {
-            Press();
+            if(currentPlayer.GetMoveTimes() == 0)
+            {
+                Press();
+            }
+            remainText.text = moveTimes.ToString();
         }
-        if (GetCurrentPhaseName() == "Rotate" && currentPlayer.GetRotateTimes() == 0)
+        if (GetCurrentPhaseName() == "Rotate")
         {
-            Press();
+            if(currentPlayer.GetRotateTimes() == 0)
+            {
+                Press();
+            }
+            remainText.text = rotateTimes.ToString();
         }
         if (GetCurrentPhaseName() == "Wall")
         {
