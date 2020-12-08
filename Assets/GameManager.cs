@@ -357,4 +357,26 @@ public class GameManager : MonoBehaviour
             MySingleton.Instance.selectedWall.isPlaced = false;
         }   
     }
+
+    public int GetCurrentPhase()
+    {
+        if(GetCurrentPhaseName() == "Wall")
+        {
+            return 0;
+        }
+        if (GetCurrentPhaseName() == "Rotate")
+        {
+            return 1;
+        }
+        if (GetCurrentPhaseName() == "Move")
+        {
+            return 2;
+        }
+        return -1;
+    }
+
+    public int GetCurrentPlayer()
+    {
+        return playerIndex % playerList.Length;
+    }
 }

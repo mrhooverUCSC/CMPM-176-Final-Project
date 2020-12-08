@@ -13,11 +13,12 @@ public class PlayerBannerControl : MonoBehaviour
     public Image p3;
     public Image p4;
     public Image p5;
+    GameManager gm;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<GameManager>().playerList.Length;
+        gm = FindObjectOfType<GameManager>();
         //Find the game objects and get the image component
         p1 = GameObject.Find("RedBanner").GetComponent<Image>();
         p2 = GameObject.Find("PurpleBanner").GetComponent<Image>();
@@ -51,8 +52,9 @@ public class PlayerBannerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player = gm.GetCurrentPlayer();
         //if we are at the first player enable the image, else disable it 
-        if (player == 1 && p1)
+        if (player == 0 && p1)
         {
             p1.enabled = true;
         }
@@ -62,7 +64,7 @@ public class PlayerBannerControl : MonoBehaviour
         }
 
         //if we are at the second player enable the image, else disable it 
-        if (player == 2 && p2)
+        if (player == 1 && p2)
         {
             p2.enabled = true;
         }
@@ -72,7 +74,7 @@ public class PlayerBannerControl : MonoBehaviour
         }
 
         //if we are at the third player enable the image, else disable it 
-        if (player == 3 && p3)
+        if (player == 2 && p3)
         {
             p3.enabled = true;
         }
@@ -82,7 +84,7 @@ public class PlayerBannerControl : MonoBehaviour
         }
 
         //if we are at the fourth player enable the image, else disable it 
-        if (player == 4 && p4)
+        if (player == 3 && p4)
         {
             p4.enabled = true;
         }
@@ -92,7 +94,7 @@ public class PlayerBannerControl : MonoBehaviour
         }
 
         //if we are at the fifth player enable the image, else disable it 
-        if (player == 5 && p5)
+        if (player == 4 && p5)
         {
             p5.enabled = true;
         }
