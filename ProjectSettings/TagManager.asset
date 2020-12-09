@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - Yellow
   - Green
+  - Purple
   layers:
   - Default
   - TransparentFX

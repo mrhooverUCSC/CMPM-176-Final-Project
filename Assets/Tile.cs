@@ -133,7 +133,18 @@ public class Tile : MonoBehaviour
     public void ResetSelection()
     {
         isSelected = false;
-        GetComponent<SpriteRenderer>().color = Color.white;
+        if(tag == "Start")
+        {
+            GetComponent<SpriteRenderer>().color = Color.blue;
+        }
+        else if(tag == "End")
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().color = Color.white;
+        } 
     }
 
     //public void SetAdjcency(Tile[] adj)

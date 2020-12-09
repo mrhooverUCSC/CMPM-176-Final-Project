@@ -63,6 +63,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if(GetCurrentPhaseName() == "Wall")
+        {
+            remainText.text = 1.ToString();
+        }
         if(GetCurrentPhaseName() == "Move")
         {
             if(currentPlayer.GetMoveTimes() == 0)
@@ -137,6 +141,7 @@ public class GameManager : MonoBehaviour
                 closest.GetWalled()[wallIndex] = true;
                 holding_tile = false;
                 placeMode = false;
+                Press();
                 ClearSelection();
                 // return both tiles and which index is blocked on each
             }
@@ -355,6 +360,7 @@ public class GameManager : MonoBehaviour
             placeMode = false;
             MySingleton.Instance.selectedWall.transform.position = MySingleton.Instance.selectedWall.startLocation;
             MySingleton.Instance.selectedWall.isPlaced = false;
+            Press();
         }   
     }
 

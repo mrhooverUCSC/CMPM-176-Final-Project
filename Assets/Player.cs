@@ -47,6 +47,13 @@ public class Player : MonoBehaviour
             {
                 if(playerstand && CheckValidMove(playerstand, MySingleton.Instance.selectedTile) || !playerstand)
                 {
+                    if(!playerstand)
+                    {
+                        if(MySingleton.Instance.selectedTile.tag != "Start")
+                        {
+                            return;
+                        } 
+                    }
                     float posx = tile.transform.position.x;
                     float posy = tile.transform.position.y;
                     transform.position = new Vector3(posx, posy, -5f);

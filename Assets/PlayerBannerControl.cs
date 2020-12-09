@@ -20,11 +20,11 @@ public class PlayerBannerControl : MonoBehaviour
     {
         gm = FindObjectOfType<GameManager>();
         //Find the game objects and get the image component
-        p1 = GameObject.Find("RedBanner").GetComponent<Image>();
-        p2 = GameObject.Find("PurpleBanner").GetComponent<Image>();
-        p3 = GameObject.Find("YellowBanner").GetComponent<Image>();
-        p4 = GameObject.Find("GreenBanner").GetComponent<Image>();
-        p5 = GameObject.Find("BlueBanner").GetComponent<Image>();
+        p1 = GameObject.Find("BlueBanner").GetComponent<Image>();
+        p2 = GameObject.Find("RedBanner").GetComponent<Image>();
+        p3 = GameObject.Find("PurpleBanner").GetComponent<Image>();
+        p4 = GameObject.Find("YellowBanner").GetComponent<Image>();
+        p5 = GameObject.Find("GreenBanner").GetComponent<Image>();
 
         //default to the banners not being rendered
         if(p1)
