@@ -4,7 +4,6 @@ using System.Security.Cryptography;
 using UnityEngine.UI;
 using UnityEngine;
 
-
 public class MySingleton : Singleton<MySingleton>
 {
     // (Optional) Prevent non-singleton constructor use.
@@ -69,6 +68,12 @@ public class GameManager : MonoBehaviour
         }
         if(GetCurrentPhaseName() == "Move")
         {
+            Debug.Log(currentPlayer.playername);
+            Walls[] firstWall = currentPlayer.GetWalls();
+            foreach (Walls y in firstWall)
+            {
+                Debug.Log(y.isPlaced);
+            }
             if(currentPlayer.GetMoveTimes() == 0)
             {
                 Press();

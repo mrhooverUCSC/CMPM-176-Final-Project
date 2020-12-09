@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] Walls[] walls;
     public int wallindex;
     Tile playerstand;
-    [SerializeField] string playername;
+    [SerializeField] public string playername;
     // Start is called before the first frame update
     void Start()
     {
@@ -88,6 +88,7 @@ public class Player : MonoBehaviour
         {
             if(wall.isPlaced)
             {
+                Debug.Log("FOUND A WALL THAT IS PLACED");
                 count++;
             }
         }
@@ -112,5 +113,10 @@ public class Player : MonoBehaviour
         }
         Debug.Log(count);
         return count;
+    }
+
+    public Walls[] GetWalls()
+    {
+        return this.walls;
     }
 }
