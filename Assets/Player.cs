@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] Walls[] walls;
     public int wallindex;
     Tile playerstand;
-    [SerializeField] string name;
+    [SerializeField] string playername;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     {
         GameManager manager = FindObjectOfType<GameManager>();
         int adjIndex = manager.GetAdjcency(source, target);
-        if(adjIndex == -1)
+        if (adjIndex == -1)
         {
             return false;
         }
@@ -45,7 +45,18 @@ public class Player : MonoBehaviour
         {
             if (tile.IsSelect())
             {
-                if(playerstand && CheckValidMove(playerstand, MySingleton.Instance.selectedTile) || !playerstand)
+                foreach (Player player in FindObjectOfType<GameManager>().playerList) //two player can't stand at same tile
+                {
+                    if (player.playerstand)
+                    {
+                        if (tile == player.playerstand)
+                        {
+                            return;
+                        }
+                    }
+
+                }
+                if (playerstand && CheckValidMove(playerstand, MySingleton.Instance.selectedTile) || !playerstand)
                 {
                     if(!playerstand)
                     {
@@ -89,7 +100,7 @@ public class Player : MonoBehaviour
         Player[] players = FindObjectsOfType<Player>();
         foreach(Player player in players)
         {
-            if(player.tag != name)
+            if(player.tag != playername)
             {
                 count += player.GetMoveTimes();
             }
