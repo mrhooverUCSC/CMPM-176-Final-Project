@@ -46,19 +46,18 @@ public class GameManager : MonoBehaviour
     public bool removeMode = false;
 
     Dictionary<Tile, Tile[]> adjacency = new Dictionary<Tile, Tile[]>();
-    // walls_placed[]; // holds how many walls each player has on the board for rotations/movement
+  // walls_placed[]; // holds how many walls each player has on the board for rotations/movement
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        buttonPressed = false;
-        playerList = FindObjectsOfType<Player>();
-        tiles = FindObjectsOfType<Tile>();
-        currentPlayer = playerList[playerIndex];
-        edge_distances = new Vector3[6] { up, up_right, down_right, down, down_left, up_left };
-        RandomizeBoard();
-        make_adjacency();
-    }
+  // Start is called before the first frame update
+  void Start() {
+    buttonPressed = false;
+    playerList = FindObjectsOfType<Player>();
+    tiles = FindObjectsOfType<Tile>();
+    currentPlayer = playerList[playerIndex];
+    edge_distances = new Vector3[6] { up, up_right, down_right, down, down_left, up_left };
+    RandomizeBoard();
+    make_adjacency();
+  }
 
     private void Update()
     {
@@ -121,17 +120,28 @@ public class GameManager : MonoBehaviour
 
             Vector3 closest_edge = edge_distances[0] / 2;
             double edge_distance = Mathf.Infinity;
+            int dir = 0;
             for (int i = 0; i < edge_distances.Length; i++)
             {
-                if (edge_distance > Vector3.Distance(mouse_position, closest.transform.position - edge_distances[i] / 2) && adjacency[closest][i])
+                if (edge_distance > Vector3.Distance(mouse_position, closest.transform.position - edge_distances[i] / 2) && adjacency[closest][i] && !closest.GetWalled()[i])
                 {
                     closest_edge = edge_distances[i] / 2;
                     edge_distance = Vector3.Distance(mouse_position, closest.transform.position - edge_distances[i] / 2);
                     wallIndex = i;
+
                 }
             }
             if (MySingleton.Instance.selectedWall && MySingleton.Instance.selectedWall.IsSelected())
             {
+                if(wallIndex == 1 || wallIndex == 4) {
+                  MySingleton.Instance.selectedWall.gameObject.transform.rotation = Quaternion.Euler(0, 0, 120);
+                }
+                else if(wallIndex == 2 || wallIndex == 5) {
+                  MySingleton.Instance.selectedWall.gameObject.transform.rotation = Quaternion.Euler(0, 0, 240);
+                }
+                else {
+                  MySingleton.Instance.selectedWall.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
                 MySingleton.Instance.selectedWall.gameObject.transform.position = closest.transform.position - closest_edge; // replace "tester" with the wall object
                 MySingleton.Instance.selectedWall.isPlaced = true;
                 MySingleton.Instance.selectedWall.attachedTile = closest;
@@ -143,7 +153,8 @@ public class GameManager : MonoBehaviour
             //Debug.Log(main_camera.ScreenToWorldPoint(Input.mousePosition));
             if (Input.GetMouseButtonDown(0) && placeMode)
             {
-                closest.GetWalled()[wallIndex] = true;
+                closest.GetWalled()[wallIndex] = true; // set tile's walled
+                adjacency[closest][wallIndex].GetWalled()[(wallIndex + 3) % 6] = true; // set adjacent tile's walled
                 holding_tile = false;
                 placeMode = false;
                 Press();
