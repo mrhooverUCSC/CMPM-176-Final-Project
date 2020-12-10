@@ -154,7 +154,7 @@ public class GameManager : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && placeMode)
             {
                 closest.GetWalled()[wallIndex] = true; // set tile's walled
-                adjacency[closest][wallIndex].GetWalled()[(wallIndex + 3) % 6] = true; // set adjacent tile's walled
+                //adjacency[closest][wallIndex].GetWalled()[(wallIndex + 3) % 6] = true; // set adjacent tile's walled
                 holding_tile = false;
                 placeMode = false;
                 Press();
@@ -376,6 +376,7 @@ public class GameManager : MonoBehaviour
             placeMode = false;
             MySingleton.Instance.selectedWall.transform.position = MySingleton.Instance.selectedWall.startLocation;
             MySingleton.Instance.selectedWall.isPlaced = false;
+            MySingleton.Instance.selectedWall.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
             Press();
         }   
     }
