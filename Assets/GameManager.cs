@@ -373,7 +373,10 @@ public class GameManager : MonoBehaviour
     IEnumerator waiter()
     {
         yield return new WaitForSeconds(0.5f);
-        placeMode = true;
+        if(currentPlayer.checkWallOwner(MySingleton.Instance.selectedWall))
+        {
+            placeMode = true;
+        }
         removeMode = false;
     }
 

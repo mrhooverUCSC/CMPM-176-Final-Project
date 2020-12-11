@@ -119,4 +119,16 @@ public class Player : MonoBehaviour
     {
         return this.walls;
     }
+
+    public bool checkWallOwner(Walls wall)
+    {
+        foreach(Walls w in walls)
+        {
+            if(MySingleton.Instance.selectedWall == w)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }

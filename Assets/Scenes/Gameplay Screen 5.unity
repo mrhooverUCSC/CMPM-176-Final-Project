@@ -1054,6 +1054,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 48769498}
     m_Modifications:
+    - target: {fileID: -8196776625312643524, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1359786510}
     - target: {fileID: 15544816075276484, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
       propertyPath: m_Name
       value: TestWall (1)
@@ -1520,6 +1524,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00fd966b8eb27f741a87f3000e12597b, type: 3}
+--- !u!114 &164086649 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1359786511, guid: 00fd966b8eb27f741a87f3000e12597b, type: 3}
+  m_PrefabInstance: {fileID: 164086648}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec9fcb12677ad746b8c83f473a72268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &168441850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1779,6 +1794,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00fd966b8eb27f741a87f3000e12597b, type: 3}
+--- !u!114 &181719066 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1359786511, guid: 00fd966b8eb27f741a87f3000e12597b, type: 3}
+  m_PrefabInstance: {fileID: 181719065}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec9fcb12677ad746b8c83f473a72268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &198617723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1937,6 +1963,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 48769498}
     m_Modifications:
+    - target: {fileID: -8196776625312643524, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 164086649}
     - target: {fileID: 15544816075276484, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
       propertyPath: m_Name
       value: TestWall (10)
@@ -2003,6 +2033,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 48769498}
     m_Modifications:
+    - target: {fileID: -8196776625312643524, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 426723028}
     - target: {fileID: 15544816075276484, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
       propertyPath: m_Name
       value: TestWall (5)
@@ -3556,6 +3590,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 48769498}
     m_Modifications:
+    - target: {fileID: -8196776625312643524, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1806759167}
     - target: {fileID: 15544816075276484, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
       propertyPath: m_Name
       value: TestWall (12)
@@ -4264,6 +4302,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00fd966b8eb27f741a87f3000e12597b, type: 3}
+--- !u!114 &426723028 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1359786511, guid: 00fd966b8eb27f741a87f3000e12597b, type: 3}
+  m_PrefabInstance: {fileID: 426723027}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec9fcb12677ad746b8c83f473a72268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &439664453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4492,6 +4541,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 48769498}
     m_Modifications:
+    - target: {fileID: -8196776625312643524, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 164086649}
     - target: {fileID: 15544816075276484, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
       propertyPath: m_Name
       value: TestWall (11)
@@ -6778,6 +6831,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 48769498}
     m_Modifications:
+    - target: {fileID: -8196776625312643524, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 181719066}
     - target: {fileID: 15544816075276484, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
       propertyPath: m_Name
       value: TestWall (6)
@@ -6875,6 +6932,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 48769498}
     m_Modifications:
+    - target: {fileID: -8196776625312643524, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1806759167}
     - target: {fileID: 15544816075276484, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
       propertyPath: m_Name
       value: TestWall (13)
@@ -6941,6 +7002,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 48769498}
     m_Modifications:
+    - target: {fileID: -8196776625312643524, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 426723028}
     - target: {fileID: 15544816075276484, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
       propertyPath: m_Name
       value: TestWall (4)
@@ -8483,6 +8548,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 48769498}
     m_Modifications:
+    - target: {fileID: -8196776625312643524, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 181719066}
     - target: {fileID: 15544816075276484, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
       propertyPath: m_Name
       value: TestWall (7)
@@ -8560,6 +8629,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 48769498}
     m_Modifications:
+    - target: {fileID: -8196776625312643524, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 181719066}
     - target: {fileID: 15544816075276484, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
       propertyPath: m_Name
       value: TestWall (8)
@@ -11218,6 +11291,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 48769498}
     m_Modifications:
+    - target: {fileID: -8196776625312643524, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 164086649}
     - target: {fileID: 15544816075276484, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
       propertyPath: m_Name
       value: TestWall (9)
@@ -12026,6 +12103,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 48769498}
     m_Modifications:
+    - target: {fileID: -8196776625312643524, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1806759167}
     - target: {fileID: 15544816075276484, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
       propertyPath: m_Name
       value: TestWall (14)
@@ -13036,6 +13117,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00fd966b8eb27f741a87f3000e12597b, type: 3}
+--- !u!114 &1359786510 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1359786511, guid: 00fd966b8eb27f741a87f3000e12597b, type: 3}
+  m_PrefabInstance: {fileID: 1359786509}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec9fcb12677ad746b8c83f473a72268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1368086424 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
@@ -14177,6 +14269,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 48769498}
     m_Modifications:
+    - target: {fileID: -8196776625312643524, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 426723028}
     - target: {fileID: 15544816075276484, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
       propertyPath: m_Name
       value: TestWall (3)
@@ -14411,6 +14507,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 48769498}
     m_Modifications:
+    - target: {fileID: -8196776625312643524, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1359786510}
     - target: {fileID: 15544816075276484, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
       propertyPath: m_Name
       value: TestWall (2)
@@ -16671,6 +16771,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00fd966b8eb27f741a87f3000e12597b, type: 3}
+--- !u!114 &1806759167 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1359786511, guid: 00fd966b8eb27f741a87f3000e12597b, type: 3}
+  m_PrefabInstance: {fileID: 1806759166}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec9fcb12677ad746b8c83f473a72268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1841510135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19737,6 +19848,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 48769498}
     m_Modifications:
+    - target: {fileID: -8196776625312643524, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1359786510}
     - target: {fileID: 15544816075276484, guid: 2065703c09509cc41a697b5223d5b910, type: 3}
       propertyPath: m_Name
       value: TestWall
