@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
             double distance = Vector3.Distance(closest.transform.position, mouse_position);
             foreach (Tile t in tiles)
             {
-                if (distance > Vector3.Distance(t.transform.position, mouse_position))
+                if (distance > Vector3.Distance(t.transform.position, mouse_position) && t.tag != "Start")
                 {
                     closest = t;
                     distance = Vector3.Distance(t.transform.position, mouse_position);
@@ -123,7 +123,8 @@ public class GameManager : MonoBehaviour
             int dir = 0;
             for (int i = 0; i < edge_distances.Length; i++)
             {
-                if (edge_distance > Vector3.Distance(mouse_position, closest.transform.position - edge_distances[i] / 2) && adjacency[closest][i] && !closest.GetWalled()[i])
+
+                if (edge_distance > Vector3.Distance(mouse_position, closest.transform.position - edge_distances[i] / 2) && adjacency[closest][i] && !closest.GetWalled()[i] && !adjacency[closest][i].GetWalled()[(i + 3)%6] && adjacency[closest][i].tag != "Start")
                 {
                     closest_edge = edge_distances[i] / 2;
                     edge_distance = Vector3.Distance(mouse_position, closest.transform.position - edge_distances[i] / 2);
@@ -131,7 +132,7 @@ public class GameManager : MonoBehaviour
 
                 }
             }
-            if (MySingleton.Instance.selectedWall && MySingleton.Instance.selectedWall.IsSelected())
+            if (MySingleton.Instance.selectedWall && MySingleton.Instance.selectedWall.IsSelected() && closest.tag != "Start")
             {
                 if(wallIndex == 1 || wallIndex == 4) {
                   MySingleton.Instance.selectedWall.gameObject.transform.rotation = Quaternion.Euler(0, 0, 120);

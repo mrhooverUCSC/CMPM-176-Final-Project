@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
         {
             if(wall.isPlaced)
             {
-                Debug.Log("FOUND A WALL THAT IS PLACED");
+               // Debug.Log("FOUND A WALL THAT IS PLACED");
                 count++;
             }
         }
