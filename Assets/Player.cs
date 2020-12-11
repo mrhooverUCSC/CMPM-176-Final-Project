@@ -70,6 +70,9 @@ public class Player : MonoBehaviour
                     transform.position = new Vector3(posx, posy, -5f);
                     playerstand = tile;
                     FindObjectOfType<GameManager>().moveTimes -= 1;
+                    if(tile.gameObject.tag == "End") {
+                        FindObjectOfType<GameManager>().end_game();
+                    }
                     return;
                 }
                 else
@@ -111,7 +114,7 @@ public class Player : MonoBehaviour
         {
             count = 5;
         }
-        Debug.Log(count);
+        //Debug.Log(count);
         return count;
     }
 

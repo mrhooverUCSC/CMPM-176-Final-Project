@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public int moveTimes;
     public int rotateTimes;
     int wallIndex;
-
+    private bool game_over;
 
     Tile[] tiles; // automatically make and add the tiles with appropriate tags
     [SerializeField] Walls tester; // remove the tester object for the wall objects
@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
   // Start is called before the first frame update
   void Start() {
     buttonPressed = false;
+    game_over = false;
     playerList = FindObjectsOfType<Player>();
     tiles = FindObjectsOfType<Tile>();
     currentPlayer = playerList[playerIndex];
@@ -61,17 +62,20 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if(game_over) {
+            
+        }
         if(GetCurrentPhaseName() == "Wall")
         {
             remainText.text = 1.ToString();
         }
         if(GetCurrentPhaseName() == "Move")
         {
-            Debug.Log(currentPlayer.playername);
+            //Debug.Log(currentPlayer.playername);
             Walls[] firstWall = currentPlayer.GetWalls();
             foreach (Walls y in firstWall)
             {
-                Debug.Log(y.isPlaced);
+                //Debug.Log(y.isPlaced);
             }
             if(currentPlayer.GetMoveTimes() == 0)
             {
@@ -123,7 +127,6 @@ public class GameManager : MonoBehaviour
             int dir = 0;
             for (int i = 0; i < edge_distances.Length; i++)
             {
-
                 if (edge_distance > Vector3.Distance(mouse_position, closest.transform.position - edge_distances[i] / 2) && adjacency[closest][i] && !closest.GetWalled()[i] && !adjacency[closest][i].GetWalled()[(i + 3)%6] && adjacency[closest][i].tag != "Start")
                 {
                     closest_edge = edge_distances[i] / 2;
@@ -179,7 +182,7 @@ public class GameManager : MonoBehaviour
             if (turnIndex > turns.Length - 1) //if the last player has taken their turn
             {
                 turnIndex = 0;
-                Debug.Log("Next Player");
+                //Debug.Log("Next Player");
                 currentPlayer = playerList[++playerIndex % playerList.Length];
             }
         }
@@ -412,5 +415,10 @@ public class GameManager : MonoBehaviour
     public int GetCurrentPlayer()
     {
         return playerIndex % playerList.Length;
+    }
+
+    public void end_game() {
+        game_over = true;
+        enabled = false;
     }
 }
