@@ -143,9 +143,19 @@ public class GameManager : MonoBehaviour
                   MySingleton.Instance.selectedWall.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
                 }
                 MySingleton.Instance.selectedWall.gameObject.transform.position = closest.transform.position - closest_edge; // replace "tester" with the wall object
-                MySingleton.Instance.selectedWall.isPlaced = true;
-                MySingleton.Instance.selectedWall.attachedTile = closest;
-                MySingleton.Instance.selectedWall.edgeIndex = wallIndex;
+                if(!MySingleton.Instance.selectedWall.isPlaced)
+                {
+                    MySingleton.Instance.selectedWall.isPlaced = true;
+                    MySingleton.Instance.selectedWall.attachedTile = closest;
+                    MySingleton.Instance.selectedWall.edgeIndex = wallIndex;
+                }
+                else
+                {
+                    MySingleton.Instance.selectedWall.attachedTile.GetWalled()[MySingleton.Instance.selectedWall.edgeIndex] = false;
+                    MySingleton.Instance.selectedWall.attachedTile = closest;
+                    MySingleton.Instance.selectedWall.edgeIndex = wallIndex;
+                }
+                
             }
 
 
