@@ -203,6 +203,7 @@ public class GameManager : MonoBehaviour
     {
         if (MySingleton.Instance.selectedTile)
         {
+            
             MySingleton.Instance.selectedTile.ResetSelection();
         }
         if (MySingleton.Instance.selectedWall)
