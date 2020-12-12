@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     tiles = FindObjectsOfType<Tile>();
     currentPlayer = playerList[playerIndex];
     edge_distances = new Vector3[6] { up, up_right, down_right, down, down_left, up_left };
-    RandomizeBoard();
+    //RandomizeBoard();
     make_adjacency();
   }
 
@@ -196,6 +196,7 @@ public class GameManager : MonoBehaviour
         {
             t.Randomize();
         }
+        GameObject.Find("Random Button").SetActive(false);
     }
 
     public void ClearSelection()
@@ -417,9 +418,10 @@ public class GameManager : MonoBehaviour
         return -1;
     }
 
-    public int GetCurrentPlayer()
+    public Player GetCurrentPlayer()
     {
-        return playerIndex % playerList.Length;
+        return currentPlayer;
+        //return playerIndex % playerList.Length;
     }
 
     public void end_game() {
