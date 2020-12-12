@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public int moveTimes;
     public int rotateTimes;
     int wallIndex;
-
+    private bool game_over;
 
     Tile[] tiles; // automatically make and add the tiles with appropriate tags
     [SerializeField] Walls tester; // remove the tester object for the wall objects
@@ -51,16 +51,20 @@ public class GameManager : MonoBehaviour
   // Start is called before the first frame update
   void Start() {
     buttonPressed = false;
+    game_over = false;
     playerList = FindObjectsOfType<Player>();
     tiles = FindObjectsOfType<Tile>();
     currentPlayer = playerList[playerIndex];
     edge_distances = new Vector3[6] { up, up_right, down_right, down, down_left, up_left };
-    RandomizeBoard();
+    //RandomizeBoard();
     make_adjacency();
   }
 
     private void Update()
     {
+        if(game_over) {
+            
+        }
         if(GetCurrentPhaseName() == "Wall")
         {
             remainText.text = 1.ToString();
@@ -68,11 +72,13 @@ public class GameManager : MonoBehaviour
         if(GetCurrentPhaseName() == "Move")
         {
             Debug.Log(currentPlayer.playername);
+            /*
             Walls[] firstWall = currentPlayer.GetWalls();
             foreach (Walls y in firstWall)
             {
-                Debug.Log(y.isPlaced);
+                //Debug.Log(y.isPlaced);
             }
+            */
             if(currentPlayer.GetMoveTimes() == 0)
             {
                 Press();
@@ -110,7 +116,7 @@ public class GameManager : MonoBehaviour
             double distance = Vector3.Distance(closest.transform.position, mouse_position);
             foreach (Tile t in tiles)
             {
-                if (distance > Vector3.Distance(t.transform.position, mouse_position))
+                if (distance > Vector3.Distance(t.transform.position, mouse_position) && t.tag != "Start")
                 {
                     closest = t;
                     distance = Vector3.Distance(t.transform.position, mouse_position);
@@ -123,7 +129,7 @@ public class GameManager : MonoBehaviour
             int dir = 0;
             for (int i = 0; i < edge_distances.Length; i++)
             {
-                if (edge_distance > Vector3.Distance(mouse_position, closest.transform.position - edge_distances[i] / 2) && adjacency[closest][i] && !closest.GetWalled()[i])
+                if (edge_distance > Vector3.Distance(mouse_position, closest.transform.position - edge_distances[i] / 2) && adjacency[closest][i] && !closest.GetWalled()[i] && !adjacency[closest][i].GetWalled()[(i + 3)%6] && adjacency[closest][i].tag != "Start")
                 {
                     closest_edge = edge_distances[i] / 2;
                     edge_distance = Vector3.Distance(mouse_position, closest.transform.position - edge_distances[i] / 2);
@@ -131,7 +137,7 @@ public class GameManager : MonoBehaviour
 
                 }
             }
-            if (MySingleton.Instance.selectedWall && MySingleton.Instance.selectedWall.IsSelected())
+            if (MySingleton.Instance.selectedWall && MySingleton.Instance.selectedWall.IsSelected() && closest.tag != "Start")
             {
                 if(wallIndex == 1 || wallIndex == 4) {
                   MySingleton.Instance.selectedWall.gameObject.transform.rotation = Quaternion.Euler(0, 0, 120);
@@ -143,9 +149,19 @@ public class GameManager : MonoBehaviour
                   MySingleton.Instance.selectedWall.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
                 }
                 MySingleton.Instance.selectedWall.gameObject.transform.position = closest.transform.position - closest_edge; // replace "tester" with the wall object
-                MySingleton.Instance.selectedWall.isPlaced = true;
-                MySingleton.Instance.selectedWall.attachedTile = closest;
-                MySingleton.Instance.selectedWall.edgeIndex = wallIndex;
+                if(!MySingleton.Instance.selectedWall.isPlaced)
+                {
+                    MySingleton.Instance.selectedWall.isPlaced = true;
+                    MySingleton.Instance.selectedWall.attachedTile = closest;
+                    MySingleton.Instance.selectedWall.edgeIndex = wallIndex;
+                }
+                else
+                {
+                    MySingleton.Instance.selectedWall.attachedTile.GetWalled()[MySingleton.Instance.selectedWall.edgeIndex] = false;
+                    MySingleton.Instance.selectedWall.attachedTile = closest;
+                    MySingleton.Instance.selectedWall.edgeIndex = wallIndex;
+                }
+                
             }
 
 
@@ -168,7 +184,7 @@ public class GameManager : MonoBehaviour
             if (turnIndex > turns.Length - 1) //if the last player has taken their turn
             {
                 turnIndex = 0;
-                Debug.Log("Next Player");
+                //Debug.Log("Next Player");
                 currentPlayer = playerList[++playerIndex % playerList.Length];
             }
         }
@@ -180,12 +196,14 @@ public class GameManager : MonoBehaviour
         {
             t.Randomize();
         }
+        GameObject.Find("Random Button").SetActive(false);
     }
 
     public void ClearSelection()
     {
         if (MySingleton.Instance.selectedTile)
         {
+            
             MySingleton.Instance.selectedTile.ResetSelection();
         }
         if (MySingleton.Instance.selectedWall)
@@ -362,7 +380,10 @@ public class GameManager : MonoBehaviour
     IEnumerator waiter()
     {
         yield return new WaitForSeconds(0.5f);
-        placeMode = true;
+        if(currentPlayer.checkWallOwner(MySingleton.Instance.selectedWall))
+        {
+            placeMode = true;
+        }
         removeMode = false;
     }
 
@@ -398,8 +419,14 @@ public class GameManager : MonoBehaviour
         return -1;
     }
 
-    public int GetCurrentPlayer()
+    public Player GetCurrentPlayer()
     {
-        return playerIndex % playerList.Length;
+        return currentPlayer;
+        //return playerIndex % playerList.Length;
+    }
+
+    public void end_game() {
+        game_over = true;
+        enabled = false;
     }
 }

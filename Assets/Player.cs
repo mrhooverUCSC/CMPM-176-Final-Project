@@ -70,6 +70,9 @@ public class Player : MonoBehaviour
                     transform.position = new Vector3(posx, posy, -5f);
                     playerstand = tile;
                     FindObjectOfType<GameManager>().moveTimes -= 1;
+                    if(tile.gameObject.tag == "End") {
+                        FindObjectOfType<GameManager>().end_game();
+                    }
                     return;
                 }
                 else
@@ -88,7 +91,7 @@ public class Player : MonoBehaviour
         {
             if(wall.isPlaced)
             {
-                Debug.Log("FOUND A WALL THAT IS PLACED");
+               // Debug.Log("FOUND A WALL THAT IS PLACED");
                 count++;
             }
         }
@@ -111,12 +114,24 @@ public class Player : MonoBehaviour
         {
             count = 5;
         }
-        Debug.Log(count);
+        //Debug.Log(count);
         return count;
     }
 
     public Walls[] GetWalls()
     {
         return this.walls;
+    }
+
+    public bool checkWallOwner(Walls wall)
+    {
+        foreach(Walls w in walls)
+        {
+            if(MySingleton.Instance.selectedWall == w)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

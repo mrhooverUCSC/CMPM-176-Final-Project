@@ -135,7 +135,7 @@ public class Tile : MonoBehaviour
         isSelected = false;
         if(tag == "Start")
         {
-            GetComponent<SpriteRenderer>().color = Color.blue;
+            GetComponent<SpriteRenderer>().color = Color.cyan;
         }
         else if(tag == "End")
         {

@@ -12,6 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/RulesScene.unity
     guid: c5df300dc22d5e247bfa3478f4138aa0
   - enabled: 1
-    path: Assets/Scenes/Gameplay Screen.unity
+    path: Assets/Scenes/Gameplay Screen 3.unity
+    guid: 52aedef052fd65a4f9c2b029209cf4e0
+  - enabled: 1
+    path: Assets/Scenes/Gameplay Screen 4.unity
+    guid: d6a59025ce42cfe4db47e1ce35455888
+  - enabled: 1
+    path: Assets/Scenes/Gameplay Screen 5.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/End Screen.unity
+    guid: d019fee8224f9d14ead3c3700208baed
   m_configObjects: {}
