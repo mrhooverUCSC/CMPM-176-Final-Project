@@ -1216,7 +1216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -1362,7 +1362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -2191,7 +2191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -2914,7 +2914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -3355,7 +3355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -4382,7 +4382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -5068,7 +5068,7 @@ GameObject:
   - component: {fileID: 519420029}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: Untagged
+  m_TagString: region2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5358,7 +5358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -5504,7 +5504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -5650,7 +5650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -5938,7 +5938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -7428,7 +7428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -7810,7 +7810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -7956,7 +7956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -8177,7 +8177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -8323,7 +8323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -9018,7 +9018,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -9865,7 +9865,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -10368,7 +10368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -10656,7 +10656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -11736,7 +11736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -13207,7 +13207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -13499,7 +13499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -13645,7 +13645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -15634,7 +15634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -15912,7 +15912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -17002,7 +17002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -18117,7 +18117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder
@@ -18409,7 +18409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539952, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_TagString
-      value: reigon2
+      value: region2
       objectReference: {fileID: 0}
     - target: {fileID: 5897024699163539955, guid: bf98df1fbb22a714d96660dfb025143b, type: 3}
       propertyPath: m_RootOrder

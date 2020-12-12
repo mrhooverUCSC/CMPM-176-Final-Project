@@ -6,7 +6,6 @@ TagManager:
   tags:
   - UI
   - region1
-  - reigon2
   - Wall
   - Yellow
   - Green
@@ -15,6 +14,7 @@ TagManager:
   - Blue
   - Start
   - End
+  - region2
   layers:
   - Default
   - TransparentFX
