@@ -8,10 +8,7 @@ public class SceneLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //if(SceneManager.GetActiveScene().name != "StartMenu")
-        //{
-        //   SceneManager.LoadScene("StartMenu");
-        //}    
+        
     }
 
     // Update is called once per frame
@@ -27,30 +24,7 @@ public class SceneLoader : MonoBehaviour
 
     public void StartGame()
     {
-        Canvas canvas = FindObjectOfType<Canvas>();
-        Transform[] buttons = canvas.gameObject.transform.GetComponentsInChildren<Transform>();
-        foreach (Transform button in buttons)
-        {
-            if(button.tag != "UI")
-            {
-                button.gameObject.SetActive(false);
-            }          
-        }
-    }
-
-    public void LoadThreePlayer()
-    {
-        SceneManager.LoadScene("Gameplay Screen 3");
-    }
-
-    public void LoadFourPlayer()
-    {
-        SceneManager.LoadScene("Gameplay Screen 4");
-    }
-
-    public void LoadFivePlayer()
-    {
-        SceneManager.LoadScene("Gameplay Screen 5");
+        SceneManager.LoadScene("Gameplay Screen");
     }
 
     public void ExitGame()

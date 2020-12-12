@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerBannerControl : MonoBehaviour
 {
     //substitute this with the variable for the stage when it is implemented
-    public Player player;
+    public int player;
     //the player image
     public Image p1;
     public Image p2;
@@ -54,7 +54,7 @@ public class PlayerBannerControl : MonoBehaviour
     {
         player = gm.GetCurrentPlayer();
         //if we are at the first player enable the image, else disable it 
-        if (player.tag == "Blue" && p1)
+        if (player == 0 && p1)
         {
             p1.enabled = true;
         }
@@ -64,7 +64,7 @@ public class PlayerBannerControl : MonoBehaviour
         }
 
         //if we are at the second player enable the image, else disable it 
-        if (player.tag == "Yellow" && p2)
+        if (player == 1 && p2)
         {
             p2.enabled = true;
         }
@@ -74,7 +74,7 @@ public class PlayerBannerControl : MonoBehaviour
         }
 
         //if we are at the third player enable the image, else disable it 
-        if (player.tag == "Green" && p3)
+        if (player == 2 && p3)
         {
             p3.enabled = true;
         }
@@ -84,7 +84,7 @@ public class PlayerBannerControl : MonoBehaviour
         }
 
         //if we are at the fourth player enable the image, else disable it 
-        if (player.tag == "Purple" && p4)
+        if (player == 3 && p4)
         {
             p4.enabled = true;
         }
@@ -94,7 +94,7 @@ public class PlayerBannerControl : MonoBehaviour
         }
 
         //if we are at the fifth player enable the image, else disable it 
-        if (player.tag == "Red" && p5)
+        if (player == 4 && p5)
         {
             p5.enabled = true;
         }
