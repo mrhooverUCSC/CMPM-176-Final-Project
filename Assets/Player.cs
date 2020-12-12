@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -72,6 +73,27 @@ public class Player : MonoBehaviour
                     FindObjectOfType<GameManager>().moveTimes -= 1;
                     if(tile.gameObject.tag == "End") {
                         FindObjectOfType<GameManager>().end_game();
+                        if(this.tag == "Blue")
+                        {
+                            MySingleton.Instance.winner = 1;
+                        }
+                        else if (this.tag == "Purple")
+                        {
+                            MySingleton.Instance.winner = 2;
+                        }
+                        else if (this.tag == "Red")
+                        {
+                            MySingleton.Instance.winner = 3;
+                        }
+                        else if (this.tag == "Yellow")
+                        {
+                            MySingleton.Instance.winner = 4;
+                        }
+                        else if (this.tag == "Green")
+                        {
+                            MySingleton.Instance.winner = 5;
+                        }
+                        SceneManager.LoadScene("End Screen");
                     }
                     return;
                 }

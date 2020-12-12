@@ -12,6 +12,7 @@ public class MySingleton : Singleton<MySingleton>
     // Then add whatever code to the class you need as you normally would.
     public Tile selectedTile;
     public Walls selectedWall;
+    public int winner;
 }
 
 
