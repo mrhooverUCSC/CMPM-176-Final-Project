@@ -31,6 +31,14 @@ public class PageChanger : MonoBehaviour
 
         rulePages = new string[7]{Page1, Page2, Page3, Page4, Page5, Page6, Page7};
         TextArea.text = rulePages[index];
+
+        image1.gameObject.SetActive(false);
+        image2.gameObject.SetActive(false);
+        image3.gameObject.SetActive(false);
+        image4.gameObject.SetActive(false);
+        image5.gameObject.SetActive(false);
+        image6.gameObject.SetActive(false);
+        image7.gameObject.SetActive(false);
     }
 
     public void NextPage()
@@ -57,7 +65,47 @@ public class PageChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(index == 1)
+        {
+            image1.gameObject.SetActive(true);
+        }
+        else
+        {
+            image1.gameObject.SetActive(false);
+        }
+
+        if(index == 3)
+        {
+            image2.gameObject.SetActive(true);
+            image3.gameObject.SetActive(true);
+            image4.gameObject.SetActive(true);
+        }
+        else
+        {
+            image2.gameObject.SetActive(false);
+            image3.gameObject.SetActive(false);
+            image4.gameObject.SetActive(false);
+        }
+
+        if(index == 4)
+        {
+            image5.gameObject.SetActive(true);
+            image6.gameObject.SetActive(true);
+        }
+        else
+        {
+            image5.gameObject.SetActive(false);
+            image6.gameObject.SetActive(false);
+        }
+
+        if(index == 5)
+        {
+            image7.gameObject.SetActive(true);
+        }
+        else
+        {
+            image7.gameObject.SetActive(false);
+        }
     }
 }
 
